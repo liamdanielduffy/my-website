@@ -24,5 +24,7 @@ jobs:
         with:
           babashka-version: 1.3.186
 
+      - run: mkdir dist
+
       - name: Run build script
         run: bb scripts/build.bb
