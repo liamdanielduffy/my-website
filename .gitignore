@@ -3,3 +3,4 @@
 .lsp
 dist
 node_modules
+.obsidian
