@@ -31,6 +31,6 @@ jobs:
       - run: mkdir dist
 
       - name: Run build script
-        run: bb scripts/build.bb
+        run: bb build.bb
 
       - run: yarn vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
