@@ -5,3 +5,4 @@ dist
 node_modules
 .obsidian
 .vercel
+.DS_Store

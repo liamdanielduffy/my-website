@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 jobs:
   simple:
     runs-on: ubuntu-latest
@@ -29,4 +33,4 @@ jobs:
       - name: Run build script
         run: bb scripts/build.bb
 
-      - run: yarn vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - run: yarn vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
