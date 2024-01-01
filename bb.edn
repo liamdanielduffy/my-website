@@ -1,1 +1,2 @@
-{:paths ["src"]}
+{:paths ["src"]
+ :deps {markdown-clj/markdown-clj {:mvn/version "1.11.7"}}}
