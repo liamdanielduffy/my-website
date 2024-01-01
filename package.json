@@ -1,7 +1,13 @@
 {
-  "dependencies": {},
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "browser-sync": "^3.0.2",
+    "nodemon": "^3.0.2",
     "tailwindcss": "^3.4.0",
     "vercel": "^33.0.1"
+  },
+  "scripts": {
+    "watch:build": "nodemon -e clj --watch src/ --exec \"bb build.bb\"",
+    "watch:serve": "npx browser-sync start --ss 'dist' -w"
   }
 }
