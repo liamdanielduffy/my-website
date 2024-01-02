@@ -1,14 +1,14 @@
 (require '[babashka.process :as process]
          '[utils])
 
-(defn update-tailwind []
+(defn build-tailwind []
   (process/sh "npx tailwindcss build -i tailwind.css -o dist/tailwind.css"))
 
-(defn update-html []
+(defn build-html []
   (spit "dist/index.html" (utils/build-html)))
 
 (defn build []
-  (update-html)
-  (update-tailwind))
+  (build-html)
+  (build-tailwind))
 
 (build)
