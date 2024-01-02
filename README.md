@@ -1,6 +1,6 @@
 ## Setup
 
-Install [Babashka](https://github.com/babashka/babashka#installation), a scripting environment for Clojure.
+Install [Babashka](https://github.com/babashka/babashka#installation), a Clojure interpreter for scripting
 
 To serve the site locally and watch for file changes, <TODO>
 
