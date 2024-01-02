@@ -12,8 +12,9 @@ This is a daily log of my progress building this project.
 
 ### 2024-01-01
 
-- I want to be able to run the `rebuild-on-change` and `refresh-on-change` scripts in parallel. `npm-run-all` seemed like a good option but had some problems running with Yarn last time. I could also try to setup a Babashka script for this.
-### 2023-12-31
+- Added a `dev` script which uses `npm-run-all` to run the site locally with auto-rebuilding when `src` changes
+
+ ### 2023-12-31
 
 - Figured out how to run an nREPL server via Babashka, [docs](https://book.babashka.org/#_nrepl)
 
