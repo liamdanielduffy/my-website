@@ -17,20 +17,20 @@
 
 (def cornice
   [[:div {:class "h-2 bg-amber-200"}]
-   [:div {:class "h-2 bg-amber-500"}]
-   [:div {:class "h-2 bg-amber-200"}]
-   [:div {:class "h-2 bg-amber-400"}]
    [:div {:class "h-2 bg-amber-300"}]
+   [:div {:class "h-2 bg-amber-400"}]
+   [:div {:class "h-2 bg-amber-500"}]
    [:div {:class "h-2 bg-amber-600"}]
-   [:div {:class "h-2 bg-slate-900"}]
-   [:div {:class "border-b-4 border-amber-400 border-dotted"}]])
+   [:div {:class "h-2 bg-amber-700"}]
+   [:div {:class "h-2 bg-slate-800"}]])
 
 (def body-tag
   (vec (concat
         [:body]
-        cornice)))
+        cornice
+        [[:p {:class "text-3xl m-2"} "🌻"]])))
 
 (def html-tag
-  [:html {:lang "en" :class "bg-slate-800"}
+  [:html {:lang "en" :class "bg-slate-900"}
    head-tag
    body-tag])
