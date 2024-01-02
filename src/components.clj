@@ -15,7 +15,7 @@
    viewport-config
    tailwind-stylesheet])
 
-(def cornice
+(def sunset
   [[:div {:class "h-2 bg-amber-200"}]
    [:div {:class "h-2 bg-amber-300"}]
    [:div {:class "h-2 bg-amber-400"}]
@@ -27,7 +27,7 @@
 (def body-tag
   (vec (concat
         [:body]
-        cornice
+        sunset
         [[:p {:class "text-3xl m-2"} "🌻"]])))
 
 (def html-tag
