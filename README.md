@@ -1,3 +1,15 @@
+## Setup
+
+Install [Babashka](https://github.com/babashka/babashka#installation), a scripting environment for Clojure.
+
+To serve the site locally and watch for file changes, <TODO>
+
+To build the site manually, `bb build.bb`
+
+## Log
+
+This is a daily log of my progress building this project.
+
 ### 2023-12-31
 
 - Figured out how to run an nREPL server via Babashka, [docs](https://book.babashka.org/#_nrepl)
