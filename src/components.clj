@@ -16,7 +16,7 @@
    tailwind-stylesheet])
 
 (def cornice
-  [[:div {:class "h-2 bg-amber-100"}]
+  [[:div {:class "h-2 bg-amber-200"}]
    [:div {:class "h-2 bg-amber-500"}]
    [:div {:class "h-2 bg-amber-200"}]
    [:div {:class "h-2 bg-amber-400"}]
