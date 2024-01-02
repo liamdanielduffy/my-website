@@ -9,12 +9,16 @@
 (defn build-tailwind []
   (process/sh "npx tailwindcss build -i tailwind.css -o build/draft/tailwind.css"))
 
+(defn build-cljs []
+  (process/sh "npx squint compile src/script.cljs"))
+
 (defn build-html []
   (spit "build/draft/index.html" (str "<!doctype html>" (h/html c/html-tag))))
 
 (defn draft-build []
   (build-html)
-  (build-tailwind))
+  (build-tailwind)
+  (build-cljs))
 
 (defn commit-build []
   ;; passing "cp -rf ..." to "bash -c" for proper glob expansion of build/draft/*
