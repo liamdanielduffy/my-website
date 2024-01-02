@@ -23,12 +23,12 @@
    [:div {:class " h-2 bg-indigo-600 "}]
    [:div {:class " h-2 bg-indigo-700"}]
    [:div {:class " h-2 bg-indigo-800"}]
-   [:div {:class " h-2 bg-indigo-900"}]
-   [:div {:class " h-2 bg-zinc-900"}]])
+   [:div {:class " h-2 bg-indigo-900"}]])
 
 (def body-tag
   [:body
-   gradient])
+   gradient
+   [:a {:href "/" :class "font-serif text-xl text-indigo-100 m-6 inline-block p-2"} "✨" [:span {:class "ml-1 border-dotted border-amber-300 border-b-2"} "Liam Duffy"]]])
 
 (def html-tag
   [:html {:lang "en" :class "bg-slate-900"}
