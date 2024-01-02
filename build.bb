@@ -10,7 +10,7 @@
   (process/sh "npx tailwindcss build -i tailwind.css -o build/draft/tailwind.css"))
 
 (defn build-html []
-  (spit "build/draft/index.html" (h/html c/html-tag)))
+  (spit "build/draft/index.html" (str "<!doctype html>" (h/html c/html-tag))))
 
 (defn draft-build []
   (build-html)
