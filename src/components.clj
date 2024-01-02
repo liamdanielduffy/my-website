@@ -5,5 +5,8 @@
 (def head-tag [:head {:title " Liam Duffy "} charset tailwind-link])
 
 (def test-typography [:article {:class " prose lg:prose-xl "}
-                      [:h1 " Garlic bread with cheese What the science tells us "]])
-(def body-tag [:body test-typography]) 
+                      [:h1 " Garlic bread!! with cheese What the science tells us "]])
+
+(def body-tag [:body test-typography])
+
+(def html-tag [:html {:lang "en" :class "dark"} head-tag body-tag])
