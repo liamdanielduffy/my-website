@@ -1,15 +1,19 @@
 (ns components)
 
-(def charset
-  [:meta {:charset " UTF-8 "}])
+(def charset-config
+  [:meta {:charset "UTF-8"}])
 
-(def tailwind-link
+(def tailwind-stylesheet
   [:link {:href " ./tailwind.css " :rel " stylesheet "}])
+
+(def viewport-config
+  [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}])
 
 (def head-tag
   [:head {:title "Liam Duffy"}
-   charset
-   tailwind-link])
+   charset-config
+   viewport-config
+   tailwind-stylesheet])
 
 (def cornice
   [[:div {:class "h-2 bg-amber-100"}]
