@@ -14,7 +14,7 @@ This is a daily log of my progress building this project.
 
 - Replaced `yarn` with `bun` as the package manager
 
-- Going to add `preact` for simple interactivity
+- Added [preact](https://preactjs.com/) for simple interactivity via [import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap). Included support for import maps in older browsers with [es-module-shims](https://github.com/guybedford/es-module-shims) 
 
 - Going to add `squint` to compile clojurescript, roughly following [this guide](https://blog.michielborkent.nl/squint-cloudflare-bun.html)
 
