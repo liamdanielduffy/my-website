@@ -1,34 +1,34 @@
 (ns components)
 
 (def charset-config
-  [:meta {:charset "UTF-8"}])
+  [:meta {:charset " UTF-8 "}])
 
 (def tailwind-stylesheet
   [:link {:href " ./tailwind.css " :rel " stylesheet "}])
 
 (def viewport-config
-  [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}])
+  [:meta {:name " viewport " :content " width=device-width, initial-scale=1 "}])
 
 (def head-tag
-  [:head {:title "Liam Duffy"}
+  [:head {:title " Liam Duffy "}
    charset-config
    viewport-config
    tailwind-stylesheet])
 
-(def sunset
-  [[:div {:class "h-2 bg-amber-200"}]
-   [:div {:class "h-2 bg-amber-300"}]
-   [:div {:class "h-2 bg-amber-400"}]
-   [:div {:class "h-2 bg-amber-500"}]
-   [:div {:class "h-2 bg-amber-600"}]
-   [:div {:class "h-2 bg-amber-700"}]
-   [:div {:class "h-2 bg-slate-800"}]])
+(def gradient
+  [:div
+   [:div {:class " h-2 bg-indigo-300 "}]
+   [:div {:class " h-2 bg-indigo-400 "}]
+   [:div {:class " h-2 bg-indigo-500 "}]
+   [:div {:class " h-2 bg-indigo-600 "}]
+   [:div {:class " h-2 bg-indigo-700"}]
+   [:div {:class " h-2 bg-indigo-800"}]
+   [:div {:class " h-2 bg-indigo-900"}]
+   [:div {:class " h-2 bg-zinc-900"}]])
 
 (def body-tag
-  (vec (concat
-        [:body]
-        sunset
-        [[:p {:class "text-3xl m-2"} "✨"]])))
+  [:body
+   gradient])
 
 (def html-tag
   [:html {:lang "en" :class "bg-slate-900"}
