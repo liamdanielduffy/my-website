@@ -18,6 +18,8 @@ This is a daily log of my progress building this project.
 
 - Going to add `squint` to compile clojurescript, roughly following [this guide](https://blog.michielborkent.nl/squint-cloudflare-bun.html)
 
+- Need to fix intermittent "Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content."
+
 ### 2024-01-01
 
 - Added a `dev` script which uses `npm-run-all` to run the site locally with auto-rebuilding when `src` changes
