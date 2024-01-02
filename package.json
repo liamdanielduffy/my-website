@@ -8,8 +8,9 @@
     "vercel": "^33.0.1"
   },
   "scripts": {
-    "dev": "npm-run-all --parallel rebuild-on-change refresh-on-change",
+    "dev": "npm-run-all --parallel rebuild-on-change refresh-on-change start-repl",
     "build": "bb build.bb",
+    "start-repl": "bb nrepl-server",
     "rebuild-on-change": "nodemon -e clj --watch src/ --exec \"bb build.bb\"",
     "refresh-on-change": "npx browser-sync start --ss 'build/final' -w"
   }
