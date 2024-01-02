@@ -1,4 +1,5 @@
-(ns components)
+(ns components
+  (:require [hiccup2.core :as h]))
 
 (def charset-config
   [:meta {:charset "UTF-8"}])
@@ -9,11 +10,30 @@
 (def viewport-config
   [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}])
 
+(def import-map-shim
+  [:script {:async true :src "https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js"}])
+
+(def import-map
+  [:script {:type "importmap"}
+   (h/raw
+    " 
+    { \"imports\": {
+      \"preact\": \"https://esm.sh/preact@10.19.2\",
+      \"preact/\": \"https://esm.sh/preact@10.19.2/\"
+    }}")])
+
+(def test-script
+  [:script {:type "module"}
+   (h/raw "import { render } from \"preact\"; console.log(render);")])
+
 (def head-tag
   [:head {:title "Liam Duffy"}
    charset-config
    viewport-config
-   tailwind-stylesheet])
+   tailwind-stylesheet
+   import-map-shim
+   import-map
+   test-script])
 
 (def gradient
   [:div
