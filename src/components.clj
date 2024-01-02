@@ -26,14 +26,22 @@
   [:script {:type "module"}
    (h/raw "import { render } from \"preact\"; console.log(render);")])
 
+(def favicon
+  [:link {:rel "icon" :href "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>✨</text></svg>"}])
+
+(def title
+  [:title "Liam Duffy"])
+
 (def head-tag
-  [:head {:title "Liam Duffy"}
+  [:head
+   title
    charset-config
    viewport-config
    tailwind-stylesheet
    import-map-shim
    import-map
-   test-script])
+   test-script
+   favicon])
 
 (def gradient
   [:div
