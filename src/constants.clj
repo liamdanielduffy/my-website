@@ -13,4 +13,4 @@
   {"preact" "preact@10.19.2"
    "squint-cljs" "squint-cljs@0.5.86"})
 
-(def import-map (u/get-import-map-json))
+(def import-map (u/get-import-map-json packages))
