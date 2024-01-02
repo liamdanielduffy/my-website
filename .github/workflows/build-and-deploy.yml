@@ -14,23 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v1
+      - uses: turtlequeue/setup-babashka@v1.5.0
+        with:
+            babashka-version: 1.3.186
+      - uses: actions/setup-node@v3
         with:
           node-version: 21
-          cache: yarn
-
-      - run: yarn install --immutable
-
-      - name: Setup Babashka
-        uses: turtlequeue/setup-babashka@v1.5.0
-        with:
-          babashka-version: 1.3.186
-
-      - run: mkdir dist
-
-      - name: Run build script
-        run: bb build.bb
-
+      - run: bun install
+      - run: bun run build
       - run: yarn vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
