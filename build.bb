@@ -17,9 +17,9 @@
   (build-tailwind))
 
 (defn commit-build []
-   ;; for some reason, cp -rf build/draft build/final/* doesn't work, not sure why so hacking around it for now
-  (process/sh "cp build/draft/index.html build/final/index.html")
-  (process/sh "cp build/draft/tailwind.css build/final/tailwind.css"))
+  ;; passing "cp -rf ..." to "bash -c" for proper glob expansion of build/draft/*
+  ;; running "cp -rf ..." directly gives directory not found error
+  (process/sh "bash -c" "cp -rf build/draft/* build/final"))
 
 (defn build []
   (prepare-to-build)
