@@ -2,16 +2,16 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "browser-sync": "^3.0.2",
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.2",
-    "npm-run-all": "^4.1.5",
     "tailwindcss": "^3.4.0",
     "vercel": "^33.0.1"
   },
   "scripts": {
-    "dev": "npm-run-all --parallel rebuild-on-change refresh-on-change start-repl",
+    "dev": "concurrently npm:rebuild npm:refresh npm:repl",
     "build": "bb build.bb",
-    "start-repl": "bb nrepl-server",
-    "rebuild-on-change": "nodemon -e clj --watch src/ --exec \"bb build.bb\"",
-    "refresh-on-change": "npx browser-sync start --ss 'build/final' -w"
+    "repl": "bb nrepl-server",
+    "rebuild": "nodemon -e clj --watch src/ --exec \"bb build.bb\"",
+    "refresh": "npx browser-sync start --ss 'build/final' -w"
   }
 }
