@@ -28,7 +28,7 @@
 (def body-tag
   [:body
    gradient
-   [:a {:href "/" :class "font-serif text-2xl text-indigo-100 m-6 inline-block p-2"} "✨" [:span {:class "ml-1 pb-0 border-dotted border-indigo-300 border-b-2"} "Liam Duffy"]]])
+   [:a {:href "/" :class "font-serif text-2xl text-indigo-100 m-2 sm:m-6 inline-block p-2"} "✨" [:span {:class "ml-1 pb-0 border-dotted border-indigo-300 border-b-2"} "Liam Duffy"]]])
 
 (def html-tag
   [:html {:lang "en" :class "bg-slate-900"}
