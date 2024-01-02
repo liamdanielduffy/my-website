@@ -28,7 +28,7 @@
   (vec (concat
         [:body]
         sunset
-        [[:p {:class "text-3xl m-2"} "🌻"]])))
+        [[:p {:class "text-3xl m-2"} "✨"]])))
 
 (def html-tag
   [:html {:lang "en" :class "bg-slate-900"}
