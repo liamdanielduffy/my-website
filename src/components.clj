@@ -1,46 +1,39 @@
 (ns components
-  (:require [hiccup2.core :as h]))
+  (:require [constants :as c]))
 
-(def charset-config
-  [:meta {:charset "UTF-8"}])
+(def title-tag
+  [:title "Liam Duffy"])
+
+(def charset-meta-tag
+  [:meta {:charset c/charset}])
 
 (def tailwind-stylesheet
-  [:link {:href "./tailwind.css" :rel "stylesheet"}])
+  [:link {:href c/tailwind-styles-path :rel "stylesheet"}])
 
-(def viewport-config
-  [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}])
+(def viewport-meta-tag
+  [:meta {:name "viewport" :content c/viewport-content}])
 
-(def import-map-shim
-  [:script {:async true :src "https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js"}])
+(def import-map-shim-script
+  [:script {:async true :src c/import-map-shim-url}])
 
-(def import-map
-  [:script {:type "importmap"}
-   (h/raw
-    " 
-    { \"imports\": {
-      \"preact\": \"https://esm.sh/preact@10.19.2\",
-      \"preact/\": \"https://esm.sh/preact@10.19.2/\"
-    }}")])
+(def import-map-tag
+  [:script {:type "importmap"} c/import-map])
 
-(def test-script
-  [:script {:type "module"}
-   (h/raw "import { render } from \"preact\"; console.log(render);")])
+(def script [:script {:type "module" :src "./script.js"}])
 
 (def favicon
-  [:link {:rel "icon" :href "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>✨</text></svg>"}])
+  [:link {:rel "icon" :href (str "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>" c/favicon-emoji "</text></svg>")}])
 
-(def title
-  [:title "Liam Duffy"])
 
 (def head-tag
   [:head
-   title
-   charset-config
-   viewport-config
+   title-tag
+   charset-meta-tag
+   viewport-meta-tag
    tailwind-stylesheet
-   import-map-shim
-   import-map
-   test-script
+   import-map-shim-script
+   import-map-tag
+   script
    favicon])
 
 (def gradient
@@ -50,18 +43,20 @@
    [:div {:class "h-2 bg-blue-800"}]
    [:div {:class "h-2 bg-blue-900"}]])
 
+(def name
+  [:div {:class "p-4 sm:p-8"}
+   [:a {:href "/" :class "font-serif text-2xl text-indigo-100 inline-block"}
+    "✨"
+    [:span
+     {:class "ml-1 pb-0 border-dotted border-indigo-300 border-b-2"}
+     "Liam Duffy"]]])
+
 (def body-tag
   [:body
    gradient
-   [:div {:class "flex p-4 sm:p-8 justify-between"}
-    [:a
-     {:href "/" :class "font-serif text-2xl text-indigo-100 inline-block"}
-     "✨"
-     [:span
-      {:class "ml-1 pb-0 border-dotted border-indigo-300 border-b-2"}
-      "Liam Duffy"]]]])
+   name])
 
 (def html-tag
   [:html {:lang "en" :class "bg-slate-900"}
    head-tag
-   body-tag])
+   body-tag]) 
