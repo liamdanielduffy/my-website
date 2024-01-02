@@ -7,10 +7,10 @@
   [:link {:href " ./tailwind.css " :rel " stylesheet "}])
 
 (def viewport-config
-  [:meta {:name " viewport " :content " width=device-width, initial-scale=1 "}])
+  [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}])
 
 (def head-tag
-  [:head {:title " Liam Duffy "}
+  [:head {:title "Liam Duffy"}
    charset-config
    viewport-config
    tailwind-stylesheet])
