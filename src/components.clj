@@ -17,9 +17,6 @@
 
 (def gradient
   [:div
-   [:div {:class " h-2 bg-indigo-300 "}]
-   [:div {:class " h-2 bg-indigo-400 "}]
-   [:div {:class " h-2 bg-indigo-500 "}]
    [:div {:class " h-2 bg-indigo-600 "}]
    [:div {:class " h-2 bg-indigo-700"}]
    [:div {:class " h-2 bg-indigo-800"}]
