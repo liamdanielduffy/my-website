@@ -2,9 +2,9 @@
 
 Install [Babashka](https://github.com/babashka/babashka#installation), a Clojure interpreter for scripting
 
-To serve the site locally and watch for file changes, `TODO`
+To serve the site locally and watch for file changes, `npm run dev`
 
-To build the site manually, `bb build.bb`
+To build the site manually, `npm run build`
 
 ## Log
 
