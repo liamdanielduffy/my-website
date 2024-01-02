@@ -9,15 +9,11 @@
 (def viewport-config
   [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}])
 
-(def alpine-library
-  [:script {:defer true :src "https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"}])
-
 (def head-tag
   [:head {:title "Liam Duffy"}
    charset-config
    viewport-config
-   tailwind-stylesheet
-   alpine-library])
+   tailwind-stylesheet])
 
 (def gradient
   [:div
