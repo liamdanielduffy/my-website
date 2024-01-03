@@ -1,0 +1,9 @@
+{
+    "headers": {
+        "source": "/script.js",
+        "headers": {
+            "key": "content-type",
+            "value": "text/javascript"
+        }
+    }
+}
