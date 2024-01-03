@@ -6,6 +6,10 @@ To serve the site locally and watch for file changes, `npm run dev`
 
 To build the site manually, `npm run build`
 
+Use `bb nrepl-server` to run a REPL server for `clj` files
+
+Use `nbb nrepl-server` to run a REPL server for `cljs` files
+
 ## Log
 
 This is a daily log of my progress building this project.
