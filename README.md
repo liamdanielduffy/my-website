@@ -14,6 +14,12 @@ Use `nbb nrepl-server` to run a REPL server for `cljs` files
 
 This is a daily log of my progress building this project.
 
+## TODO
+
+- add log for 2024-01-02
+
+- implement sun-aware theme with sunrise-sunset-js
+
 ### 2024-01-02
 
 - Replaced `yarn` with `bun` as the package manager
@@ -23,6 +29,7 @@ This is a daily log of my progress building this project.
 - Going to add `squint` to compile clojurescript, roughly following [this guide](https://blog.michielborkent.nl/squint-cloudflare-bun.html)
 
 - Need to fix intermittent "Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content."
+
 
 ### 2024-01-01
 
