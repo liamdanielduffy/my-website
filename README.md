@@ -16,15 +16,15 @@ This is a daily log of my progress building this project.
 
 ## TODO
 
-- replace import maps + custom build / dev with vite
-
-- add log for 2024-01-02
+- add log for 2024-01-03
 
 - implement sun-aware theme with sunrise-sunset-js
 
-- Fix intermittent "Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content."
+### 2024-01-03
 
-- Make sure Javascript is minified
+- Switched to `vite` for building and serving the site.
+
+- The build pipeline is now (1) generate HTML from Clojure (2) generate JS from Clojurescript (3) if in production, build a minified tailwind file (otherwise use the tailwind CDN) (4) use `vite build` to bundle everything.
 
 ### 2024-01-02
 
