@@ -13,16 +13,16 @@
   (when (not (is-dev)) (process/sh "mkdir build/prod")))
 
 (defn build-tailwind []
-  (prn (process/sh "bun tailwindcss build -i tailwind.css -o build/dev/tailwind.css --minify")))
+  (process/sh "bun tailwindcss build -i tailwind.css -o build/dev/tailwind.css --minify"))
 
 (defn build-cljs []
-  (prn (process/sh "bun squint compile src/script.cljs")))
+  (process/sh "bun squint compile src/script.cljs"))
 
 (defn build-html []
   (spit "build/dev/index.html" (str "<!doctype html>" (h/html (c/html-tag (is-dev))))))
 
 (defn build-prod []
-  (prn (process/sh "bun vite build ./build/dev --outDir ../prod")))
+  (process/sh "bun vite build ./build/dev --outDir ../prod"))
 
 (defn build []
   (setup-directories)
