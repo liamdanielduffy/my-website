@@ -9,8 +9,8 @@
     "vite": "^5.0.10"
   },
   "scripts": {
-    "start-dev": "concurrently npm:watch-dev npm:serve-dev",
-    "serve-dev": "vite ./build/dev",
-    "watch-dev": "nodemon -e clj --watch src/ --exec \"bb build.bb --dev\""
+    "dev": "concurrently npm:build-dev npm:serve-dev",
+    "serve-dev": "vite ./build/dev --port 3000",
+    "build-dev": "nodemon -e clj --watch src/ --exec \"bb build.bb --dev\""
   }
 }
