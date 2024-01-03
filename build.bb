@@ -10,7 +10,7 @@
   (process/sh "npx tailwindcss build -i tailwind.css -o build/draft/tailwind.css"))
 
 (defn build-cljs []
-  (process/sh "npx squint compile src/script.cljs --extension mjs"))
+  (process/sh "npx squint compile src/script.cljs"))
 
 (defn build-html []
   (spit "build/draft/index.html" (str "<!doctype html>" (h/html c/html-tag))))

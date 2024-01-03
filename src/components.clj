@@ -19,7 +19,7 @@
 (def import-map-tag
   [:script {:type "importmap"} c/import-map])
 
-(def script [:script {:type "module" :src "./script.mjs"}])
+(def script [:script {:type "module" :src "./script.js"}])
 
 (def favicon
   [:link {:rel "icon" :href (str "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>" c/favicon-emoji "</text></svg>")}])
