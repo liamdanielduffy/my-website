@@ -24,4 +24,4 @@ jobs:
       - run: |
           bun install
           bb build.bb
-          yarn vercel deploy build/prod --prod --token=${{ secrets.VERCEL_TOKEN }} 
+          bun vercel deploy build/prod --prod --token=${{ secrets.VERCEL_TOKEN }} 

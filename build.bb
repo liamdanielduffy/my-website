@@ -22,7 +22,7 @@
   (spit "build/dev/index.html" (str "<!doctype html>" (h/html (c/html-tag (is-dev))))))
 
 (defn build-prod []
-  (prn (:err (process/sh "npx vite build ./build/dev --outDir ../prod"))))
+  (process/sh "npx vite build ./build/dev --outDir ../prod"))
 
 (defn build []
   (setup-directories)
