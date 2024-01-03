@@ -8,10 +8,8 @@
     "vite": "^5.0.10"
   },
   "scripts": {
-    "start:dev": "concurrently npm:watch:dev npm:serve:dev",
-    "serve:dev": "vite ./build/dev",
-    "build": "bb build.bb",
-    "build:dev": "bb build.bb --dev",
-    "watch:dev": "nodemon -e clj --watch src/ --exec \"bun run build:dev\""
+    "start-dev": "concurrently npm:watch-dev npm:serve-dev",
+    "serve-dev": "vite ./build/dev",
+    "watch-dev": "nodemon -e clj --watch src/ --exec \"bb build.bb --dev\""
   }
 }
