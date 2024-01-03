@@ -10,29 +10,25 @@
 (def tailwind-stylesheet
   [:link {:href c/tailwind-styles-path :rel "stylesheet"}])
 
+(def tailwind-cdn
+  [:script {:src c/tailwind-cdn-url}])
+
 (def viewport-meta-tag
   [:meta {:name "viewport" :content c/viewport-content}])
-
-(def import-map-shim-script
-  [:script {:async true :src c/import-map-shim-url}])
-
-(def import-map-tag
-  [:script {:type "importmap"} c/import-map])
 
 (def script [:script {:type "module" :src "./script.js"}])
 
 (def favicon
   [:link {:rel "icon" :href (str "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>" c/favicon-emoji "</text></svg>")}])
 
-
-(def head-tag
+(defn head-tag [is-dev]
   [:head
    title-tag
    charset-meta-tag
    viewport-meta-tag
-   tailwind-stylesheet
-   import-map-shim-script
-   import-map-tag
+   (if is-dev
+     tailwind-cdn
+     tailwind-stylesheet)
    script
    favicon])
 
@@ -56,7 +52,7 @@
    gradient
    name])
 
-(def html-tag
+(defn html-tag [is-dev]
   [:html {:lang "en" :class "bg-slate-900"}
-   head-tag
+   (head-tag is-dev)
    body-tag]) 

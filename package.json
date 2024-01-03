@@ -1,16 +1,17 @@
 {
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "browser-sync": "^3.0.2",
     "concurrently": "^8.2.2",
     "nodemon": "^3.0.2",
     "tailwindcss": "^3.4.0",
-    "vercel": "^33.0.1"
+    "vercel": "^33.0.1",
+    "vite": "^5.0.10"
   },
   "scripts": {
-    "dev": "concurrently npm:rebuild npm:refresh",
+    "start:dev": "concurrently npm:watch:dev npm:serve:dev",
+    "serve:dev": "vite ./build/dev",
     "build": "bb build.bb",
-    "rebuild": "nodemon -e clj --watch src/ --exec \"bb build.bb\"",
-    "refresh": "npx browser-sync start --ss 'build/final' -w"
+    "build:dev": "bb build.bb --dev",
+    "watch:dev": "nodemon -e clj --watch src/ --exec \"bun run build:dev\""
   }
 }

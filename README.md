@@ -16,26 +16,31 @@ This is a daily log of my progress building this project.
 
 ## TODO
 
+- replace import maps + custom build / dev with vite
+
 - add log for 2024-01-02
 
 - implement sun-aware theme with sunrise-sunset-js
+
+- Fix intermittent "Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content."
+
+- Make sure Javascript is minified
 
 ### 2024-01-02
 
 - Replaced `yarn` with `bun` as the package manager
 
-- Added [preact](https://preactjs.com/) for simple interactivity via [import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap). Included support for import maps in older browsers with [es-module-shims](https://github.com/guybedford/es-module-shims) 
+- Added [preact](https://preactjs.com/) for simple interactivity via [import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap). Included support for import maps in older browsers with [es-module-shims](https://github.com/guybedford/es-module-shims)  
 
-- Going to add `squint` to compile clojurescript, roughly following [this guide](https://blog.michielborkent.nl/squint-cloudflare-bun.html)
+- Moved constants for site config to a `constants.clj` file. Added a util for building import map JSON to `utils.clj`
 
-- Need to fix intermittent "Layout was forced before the page was fully loaded. If stylesheets are not yet loaded this may cause a flash of unstyled content."
-
+- Added [squint](https://github.com/squint-cljs/squint) to compile Clojurescript to Javascript, roughly following [this guide](https://blog.michielborkent.nl/squint-cloudflare-bun.html)
 
 ### 2024-01-01
 
 - Added a `dev` script which uses `npm-run-all` to run the site locally with auto-rebuilding when `src` changes
 
-- Found a bug during `dev` where re-building `index.html` would immediately trigger a browser refresh before `tailwind.css` was built, leading to styles that were "off-by-one-refresh". I updated my build script to first build everything in a `build/draft` folder, then copy the contents of `build/draft` into `build/final`. `dev` now watches `build/final` for changes, meaning it always sees all of the files of a new build at once.
+- Found a bug during `dev` where re-building `index.html` would immediately trigger a browser refresh before `tailwind.css` was built, leading to styles that were "off-by-one-refresh". I updated my build script to first build everything in a `build/draft` folder, then copy the contents of `build/draft` into `build/final`. `dev` now watches `build/final` for changes. This means `dev` now sees all new build files at the same time.
 
 - Added a script within `dev` to run an nREPL via `bb nrepl-server`
 
