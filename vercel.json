@@ -4,7 +4,7 @@
             "source": "/script.js",
             "headers": [
                 {
-                    "key": "content-type",
+                    "key": "Content-Type",
                     "value": "text/javascript"
                 }
             ]
