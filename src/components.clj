@@ -20,7 +20,7 @@
   [:link {:rel "preconnect" :href "https://fonts.gstatic.com" :crossorigin ""}])
 
 (def jetbrains-mono-stylesheet
-  [:link {:rel "preload" :as "style" :href "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap"}])
+  [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap"}])
 
 (def script [:script {:type "module" :src "./script.js"}])
 
