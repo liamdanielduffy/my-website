@@ -10,27 +10,34 @@
 (def tailwind-stylesheet
   [:link {:href c/tailwind-styles-path :rel "stylesheet"}])
 
-(def tailwind-cdn
-  [:script {:src c/tailwind-cdn-url}])
-
 (def viewport-meta-tag
   [:meta {:name "viewport" :content c/viewport-content}])
+
+(def google-fonts-preconnect
+  [:link {:rel "preconnect" :href "https://fonts.googleapis.com"}])
+
+(def gstatic-preconnect
+  [:link {:rel "preconnect" :href "https://fonts.gstatic.com" :crossorigin ""}])
+
+(def jetbrains-mono-stylesheet
+  [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"}])
 
 (def script [:script {:type "module" :src "./script.js"}])
 
 (def favicon
   [:link {:rel "icon" :href (str "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>" c/favicon-emoji "</text></svg>")}])
 
-(defn head-tag [is-dev]
+(def head-tag
   [:head
    title-tag
    charset-meta-tag
    viewport-meta-tag
-   (if is-dev
-     tailwind-cdn
-     tailwind-stylesheet)
+   tailwind-stylesheet
    script
-   favicon])
+   favicon
+   google-fonts-preconnect
+   gstatic-preconnect
+   jetbrains-mono-stylesheet])
 
 (def gradient
   [:div
@@ -40,19 +47,37 @@
    [:div {:class "h-2 bg-blue-900"}]])
 
 (def name
-  [:div {:class "p-4 sm:p-8"}
-   [:a {:href "/" :class "font-serif text-2xl text-indigo-100 inline-block"}
+  [:div {:class "ml-4 mt-4 sm:ml-4 sm:mt-4"}
+   [:a {:href "/" :class "font-serif text-xl sm:text-2xl text-indigo-100 inline-block"}
     "✨"
     [:span
      {:class "ml-1 pb-0 border-dotted border-indigo-300 border-b-2"}
      "Liam Duffy"]]])
 
+(def hello-world
+  [:span {:class "text-3xl sm:text-4xl text-indigo-100"} "Hello, world!"])
+
+(def who-i-am
+  [:span {:class "text-lg sm:text-xl text-serif mt-4 sm:mt-8 max-w-sm sm:max-w-lg"}
+   "My name is "
+   [:span {:class "text-amber-400"} "Liam. "]
+   "I'm a "
+   [:span {:class "text-green-400"} "software engineer "]
+   "from "
+   [:span {:class "whitespace-nowrap"} "Brooklyn, NY."]])
+
+(def welcome
+  [:div {:class "px-6 sm:px-8 py-12 sm:py-16 font-mono text-indigo-100 flex flex-col sm:items-center"}
+   hello-world
+   who-i-am])
+
 (def body-tag
   [:body
    gradient
-   name])
+   name
+   welcome])
 
-(defn html-tag [is-dev]
+(def html-tag
   [:html {:lang "en" :class "bg-slate-900"}
-   (head-tag is-dev)
+   head-tag
    body-tag]) 
