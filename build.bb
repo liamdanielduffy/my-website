@@ -19,7 +19,7 @@
   (process/sh "bun squint compile src/script.cljs"))
 
 (defn build-html []
-  (spit "build/dev/index.html" (str "<!doctype html>" (h/html (c/html-tag (is-dev))))))
+  (spit "build/dev/index.html" (str "<!doctype html>" (h/html c/html-tag))))
 
 (defn build-prod []
   (process/sh "bun vite build ./build/dev --outDir ../prod"))
@@ -28,7 +28,7 @@
   (setup-directories)
   (build-cljs)
   (build-html)
-  (when (not (is-dev)) (build-tailwind))
+  (build-tailwind)
   (when (not (is-dev)) (build-prod)))
 
 (build)
