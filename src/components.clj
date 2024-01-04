@@ -35,10 +35,9 @@
    tailwind-stylesheet
    script
    favicon
-  ;;  google-fonts-preconnect
-  ;;  gstatic-preconnect
-  ;;  jetbrains-mono-stylesheet
-   ])
+   google-fonts-preconnect
+   gstatic-preconnect
+   jetbrains-mono-stylesheet])
 
 (def gradient
   [:div
