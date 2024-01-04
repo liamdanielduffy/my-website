@@ -72,7 +72,7 @@
    who-i-am])
 
 (def body-tag
-  [:body
+  [:body {:class "h-screen w-screen bg-gradient-to-t from-slate-800 to-slate-900"}
    [:div {:class "pattern-dots pattern-blue-500 pattern-bg-white 
   pattern-size-6 pattern-opacity-20"}]
    gradient
@@ -80,6 +80,6 @@
    welcome])
 
 (def html-tag
-  [:html {:lang "en" :class "h-screen w-screen bg-gradient-to-t from-slate-800 to-slate-900"}
+  [:html {:lang "en" :class "h-screen w-screen bg-slate-900"}
    head-tag
    body-tag]) 
