@@ -9,7 +9,7 @@
     is-dev))
 
 (defn setup-directories []
-  (process/sh "mkdir build build/dev")
+  (process/sh "mkdir build build/dev build/dev/public")
   (when (not (is-dev)) (process/sh "mkdir build/prod")))
 
 (defn build-tailwind []
@@ -24,8 +24,13 @@
 (defn build-prod []
   (process/sh "bun vite build ./build/dev --outDir ../prod"))
 
+(defn copy-public []
+  (process/sh "bash" "-c" "cp -r ./public/* build/dev/public"))
+
+
 (defn build []
   (setup-directories)
+  (copy-public)
   (build-cljs)
   (build-html)
   (build-tailwind)

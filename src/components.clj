@@ -88,7 +88,7 @@
              (nowrap "Brooklyn, NY.")))
 
 (def read-my-resume
-  [:a {:href "/" :class "rounded p-2 bg-amber-400 text-amber-900 font-mono"}
+  [:a {:href "/resume.pdf" :class "rounded p-2 bg-amber-400 text-amber-900 font-mono"}
    [:span {:class "bg-yellow-200 text-amber-900 rounded p-1 mr-2"}
     "Hiring?"]
    "Read my résumé ->"])
