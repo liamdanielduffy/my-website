@@ -20,7 +20,7 @@
   [:link {:rel "preconnect" :href "https://fonts.gstatic.com" :crossorigin ""}])
 
 (def jetbrains-mono-stylesheet
-  [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"}])
+  [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap"}])
 
 (def script [:script {:type "module" :src "./script.js"}])
 
@@ -48,10 +48,10 @@
 
 (def name
   [:div {:class "ml-4 mt-4 sm:ml-4 sm:mt-4"}
-   [:a {:href "/" :class "font-serif text-xl sm:text-2xl text-indigo-100 inline-block"}
+   [:a {:href "/" :class "font-mono text-xl sm:text-2xl text-indigo-100 inline-block"}
     "✨"
     [:span
-     {:class "ml-1 pb-0 border-dotted border-indigo-300 border-b-2"}
+     {:class "italic ml-1 pb-0 border-dotted border-indigo-300 border-b-2"}
      "Liam Duffy"]]])
 
 (def hello-world
@@ -73,11 +73,13 @@
 
 (def body-tag
   [:body
+   [:div {:class "pattern-dots pattern-blue-500 pattern-bg-white 
+  pattern-size-6 pattern-opacity-20"}]
    gradient
    name
    welcome])
 
 (def html-tag
-  [:html {:lang "en" :class "bg-slate-900"}
+  [:html {:lang "en" :class "h-screen w-screen bg-gradient-to-t from-slate-800 to-slate-900"}
    head-tag
    body-tag]) 
