@@ -66,7 +66,7 @@
    "from "
    [:span {:class "whitespace-nowrap"} "Brooklyn, NY."]])
 
-(def welcome
+(def content
   [:div {:class "px-6 sm:px-8 py-12 sm:py-16 font-mono text-indigo-100 flex flex-col sm:items-center"}
    hello-world
    who-i-am])
@@ -77,7 +77,7 @@
   pattern-size-6 pattern-opacity-20"}]
    gradient
    name
-   welcome])
+   content])
 
 (def html-tag
   [:html {:lang "en" :class "h-screen w-screen bg-slate-900"}
