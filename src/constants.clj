@@ -5,3 +5,6 @@
 (def tailwind-styles-path "./tailwind.css")
 (def tailwind-cdn-url "https://cdn.tailwindcss.com")
 (def favicon-emoji "✨")
+(def flowcode-url "https://www.flowcode.com")
+(def social-star-url "https://socialstar.co")
+(def thejuggernaut-url "https://www.thejuggernaut.com")

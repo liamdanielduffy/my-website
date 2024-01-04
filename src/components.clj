@@ -57,19 +57,57 @@
 (def hello-world
   [:span {:class "text-3xl sm:text-4xl text-indigo-100"} "Hello, world!"])
 
+(defn paragraph [& content]
+  [:p {:class "text-lg sm:text-xl text-serif mt-4 sm:mt-8 max-w-sm sm:max-w-lg"} content])
+
+(defn highlight [content color]
+  [:span {:class (str "text-" color)} content])
+
+(def space " ")
+
+(defn link [content color href]
+  [:a {:href href :class (str "border-b-2 border-dotted" space "border-" color space "text-" color)} content])
+
+(defn nowrap [content]
+  [:span {:class "whitespace-nowrap"} content])
+
 (def who-i-am
-  [:span {:class "text-lg sm:text-xl text-serif mt-4 sm:mt-8 max-w-sm sm:max-w-lg"}
-   "My name is "
-   [:span {:class "text-amber-400"} "Liam. "]
-   "I'm a "
-   [:span {:class "text-green-400"} "software engineer "]
-   "from "
-   [:span {:class "whitespace-nowrap"} "Brooklyn, NY."]])
+  (paragraph "My name is" space
+             (highlight "Liam." "amber-400") space
+             "I'm a" space
+             (highlight "software engineer" "green-400") space
+             "from" space
+             (nowrap "Brooklyn, NY.")))
+
+(def career-summary
+  (paragraph "I've built" space
+             (highlight "full-stack web apps" "sky-300") space
+             "for several" space
+             (highlight "early-stage startups." "red-400")))
+
+(def flowcode-summary
+  (paragraph "I was one of the first engineers at" space
+             (link "Flowcode" "purple-400" c/flowcode-url) "," space "a QR-code builder used by most of the Fortune 1000."))
+
+(def socialstar-summary
+  (paragraph "Before that, I was on the founding team of" space
+             (link "Social Star" "pink-400" c/social-star-url)
+             ", a volunteering platform for one of India's largest non-profits."))
+
+(def juggernaut-summary
+  (paragraph "I built and launched the first version of" space
+             (link "The Juggernaut" "orange-400" c/thejuggernaut-url)
+             ", a Y-Combinator-backed publication for South Asian journalism."))
+
 
 (def content
   [:div {:class "px-6 sm:px-8 py-12 sm:py-16 font-mono text-indigo-100 flex flex-col sm:items-center"}
    hello-world
-   who-i-am])
+   who-i-am
+   career-summary
+   flowcode-summary
+   socialstar-summary
+   juggernaut-summary])
 
 (def body-tag
   [:body {:class "h-screen w-screen bg-gradient-to-t from-slate-800 to-slate-900"}
@@ -82,4 +120,4 @@
 (def html-tag
   [:html {:lang "en" :class "h-screen w-screen bg-slate-900"}
    head-tag
-   body-tag]) 
+   body-tag]) "" 
