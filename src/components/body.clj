@@ -16,7 +16,7 @@
   [:span {:class (str "text-" color)} content])
 
 (defn link [content color href]
-  [:a {:href href :class (str "border-b-2 border-dotted" space "border-" color space "text-" color)} content])
+  [:a {:target "_blank" :rel "noopener noreferrer" :href href :class (str "border-b-2 border-dotted" space "border-" color space "text-" color)} content])
 
 (defn nowrap [content]
   [:span {:class "whitespace-nowrap"} content])
