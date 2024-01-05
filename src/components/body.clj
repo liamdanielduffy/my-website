@@ -2,16 +2,18 @@
   (:require [constants :as c]
             [components.nav :as nav]))
 
+(def space " ")
+
+(def top-margin "sm:mt-8 mt-4")
+
 (def hello-world
-  [:span {:class "pt-8 text-4xl sm:text-5xl text-indigo-100"} "Hello, world!"])
+  [:span {:class "text-4xl sm:text-5xl text-indigo-100"} "Hello, world!"])
 
 (defn paragraph [& content]
-  [:p {:class "text-lg sm:text-xl text-serif mt-4 sm:mt-8 max-w-sm sm:max-w-lg"} content])
+  [:p {:class "text-lg sm:text-xl text-serif mt-8 max-w-sm sm:max-w-lg"} content])
 
 (defn highlight [content color]
   [:span {:class (str "text-" color)} content])
-
-(def space " ")
 
 (defn link [content color href]
   [:a {:href href :class (str "border-b-2 border-dotted" space "border-" color space "text-" color)} content])
@@ -28,7 +30,7 @@
              (nowrap "Brooklyn, NY.")))
 
 (def read-my-resume
-  [:a {:href "/resume.pdf" :class "rounded p-2 bg-amber-400 text-amber-900 font-mono"}
+  [:a {:href "/resume.pdf" :class "mt-8 mb-10 rounded p-2 bg-amber-400 text-amber-900 font-mono justify-self-start"}
    [:span {:class "bg-yellow-200 text-amber-900 rounded p-1 mr-2"}
     "Hiring?"]
    "Read my résumé ->"])
@@ -55,7 +57,7 @@
              \, space "a Y-Combinator-backed publication for South Asian journalism."))
 
 (def content
-  [:div {:class "px-6 sm:px-8 py-8 sm:py-12 font-mono text-indigo-100 flex flex-col sm:items-center"}
+  [:div {:class "px-6 sm:px-8 font-mono text-indigo-100 flex flex-col sm:items-center"}
    read-my-resume
    hello-world
    about-me
