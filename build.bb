@@ -1,6 +1,6 @@
 (require '[babashka.process :as process]
          '[hiccup2.core :as h]
-         '[components :as c]
+         '[components.page :as p]
          '[babashka.cli :as cli])
 
 (defn is-dev []
@@ -19,7 +19,7 @@
   (process/sh "bun squint compile src/script.cljs"))
 
 (defn build-html []
-  (spit "build/dev/index.html" (str "<!doctype html>" (h/html c/html-tag))))
+  (spit "build/dev/index.html" (str "<!doctype html>" (h/html p/html-tag))))
 
 (defn build-prod []
   (process/sh "bun vite build ./build/dev --outDir ../prod"))
