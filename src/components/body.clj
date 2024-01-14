@@ -10,13 +10,13 @@
   [:span {:class (str "text-" color)} content])
 
 (def title
-  [:span {:class "mt-4 text-5xl text-gray-900 font-garamond max-w-lg"} "My name is" space "Liam Duffy. I'm a software engineer from Brooklyn."])
+  [:span {:class "mt-3 sm:mt-6 text-3xl sm:text-5xl text-gray-900 font-garamond max-w-lg"} "My name is" space "Liam Duffy. I'm a software engineer from Brooklyn."])
 
 (defn paragraph [& content]
-  [:p {:class "text-slate-900 text-xl sm:text-2xl text-serif mt-8 max-w-sm sm:max-w-lg"} content])
+  [:p {:class "text-slate-900 text-lg sm:text-2xl text-serif mt-6 sm:mt-8 max-w-sm sm:max-w-lg"} content])
 
 (defn link [content color href]
-  [:a {:target "_blank" :rel "noopener noreferrer" :href href :class (str "border-b-2 border-dotted" space "border-" color space "text-" color space "text-3xl font-chicago whitespace-nowrap")} content])
+  [:a {:target "_blank" :rel "noopener noreferrer" :href href :class (str "mx-1 border-b-2 border-dotted" space "border-" color space "text-" color space "text-2xl sm:text-3xl font-chicago whitespace-nowrap")} content])
 
 (defn nowrap [content]
   [:span {:class "whitespace-nowrap"} content])
@@ -44,8 +44,8 @@
 
 (def content
   [:div {:class "pt-12 px-6 sm:px-8 font-sans text-slate-800 flex flex-col sm:items-center"}
-   [:span {:class "text-5xl"} "🚲🌳🏙️"]
-   [:p {:class "text-7xl font-garamond mt-6"} "Hello, world!"]
+   [:span {:class "text-3xl sm:text-5xl"} "🚲🌳🏙️"]
+   [:p {:class "text-5xl sm:text-7xl font-garamond mt-6"} "Hello, world!"]
    title
    flowcode-summary
    socialstar-summary
