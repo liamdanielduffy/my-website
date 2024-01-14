@@ -5,7 +5,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'mono': ['JetBrains Mono', 'monospace']
+        mono: ['JetBrains Mono', 'monospace'],
+        garamond: ['Garamond', 'serif'],
+        chicago: ['Chicago', 'sans-serif']
       }
     },
   },
