@@ -13,7 +13,7 @@
   [:span {:class "mt-4 text-5xl text-gray-900 font-garamond max-w-lg"} "My name is" space "Liam Duffy. I'm a software engineer from Brooklyn."])
 
 (defn paragraph [& content]
-  [:p {:class "text-xl sm:text-2xl text-serif mt-8 max-w-sm sm:max-w-lg"} content])
+  [:p {:class "text-slate-900 text-xl sm:text-2xl text-serif mt-8 max-w-sm sm:max-w-lg"} content])
 
 (defn link [content color href]
   [:a {:target "_blank" :rel "noopener noreferrer" :href href :class (str "border-b-2 border-dotted" space "border-" color space "text-" color space "text-3xl font-chicago whitespace-nowrap")} content])
