@@ -28,7 +28,7 @@
    "Read my résumé ->"])
 
 (def hiring
-  (paragraph "(Hiring? Read my " (link "Resume" "red-400" c/resume-path) "!)"))
+  (paragraph "(Hiring? Read my " (link "resume" "red-400" c/resume-path) "!)"))
 
 (def flowcode-summary
   (paragraph "I was an early engineer at" space
