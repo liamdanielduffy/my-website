@@ -13,3 +13,4 @@
 (def flowcode-url "https://www.flowcode.com")
 (def social-star-url "https://socialstar.co")
 (def thejuggernaut-url "https://www.thejuggernaut.com")
+(def resume-path "/resume.pdf")

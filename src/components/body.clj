@@ -27,6 +27,9 @@
     "Hiring?"]
    "Read my résumé ->"])
 
+(def hiring
+  (paragraph "(Hiring? Read my " (link "Resume" "red-400" c/resume-path) "!)"))
+
 (def flowcode-summary
   (paragraph "I was an early engineer at" space
              (link "Flowcode" "blue-400" c/flowcode-url)
@@ -47,6 +50,7 @@
    [:span {:class "text-3xl sm:text-5xl"} "🚲🌳🏙️"]
    [:p {:class "text-5xl sm:text-7xl font-garamond mt-6"} "Hello, world!"]
    title
+   hiring
    flowcode-summary
    socialstar-summary
    juggernaut-summary])
